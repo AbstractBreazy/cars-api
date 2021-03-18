@@ -6,7 +6,6 @@ import (
 	"os"
 )
 
-
 // DatabaseConfigurations exported
 type DBConfig struct {
 	Engine   string

@@ -24,9 +24,9 @@ type Car struct {
 	ID         string `json:"id"` // unique / primary key gorm
 	Brand      string `json:"brand"`
 	Model      string `json:"model"`
-	Price      int64 `json:"price"`
+	Price      int64  `json:"price"`
 	Status     string `json:"status"` // 1 - В пути, 2 - На Складе, 3 - Продано, 4 - Нет в наличии
-	Kilometres int64 `json:"kilometres"`
+	Kilometres int64  `json:"kilometres"`
 }
 
 type CarsDataStore struct {

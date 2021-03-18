@@ -1,9 +1,9 @@
 package models
 
 import (
+	"cars-api/config"
 	"fmt"
 	"github.com/jinzhu/gorm"
-	"cars-api/config"
 	_ "github.com/lib/pq"
 )
 

@@ -29,7 +29,7 @@ func (m *CarsManager) PostCar(car *models.Car) (*models.Car, error) {
 
 func (m *CarsManager) DeleteCar(carId string) (*models.Car, error) {
 	car, err := m.CarsDataStore.Get(carId)
-	if err != nil{
+	if err != nil {
 		return nil, err
 	}
 	err = m.CarsDataStore.Remove(car.ID)
@@ -38,4 +38,3 @@ func (m *CarsManager) DeleteCar(carId string) (*models.Car, error) {
 	}
 	return car, nil
 }
-
