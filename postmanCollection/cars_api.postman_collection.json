@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "86b7ca3b-a9e3-4bb9-94ae-378ab6eba747",
+		"name": "cars_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8090/api/v1/cars/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"id\": \"14953a34-edca-46e7-97fa-b06c7f0b1261\",\r\n            \"brand\": \"BMW\",\r\n            \"model\": \"X6\",\r\n            \"price\": 2500000,\r\n            \"status\": \"Sold Out\",\r\n            \"kilometres\": 1000\r\n        }"
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/cars/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/cars/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/cars/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/cars/14953a34-edca-46e7-97fa-b06c7f0b1261",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/cars/14953a34-edca-46e7-97fa-b06c7f0b1261",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						"14953a34-edca-46e7-97fa-b06c7f0b1261"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/cars/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"id\": \"3943eec2-2441-495f-8475-7e071f475e79\",\r\n            \"brand\": \"KIA\",\r\n            \"model\": \"Ceed\",\r\n            \"price\": 10000,\r\n            \"status\": \"Sold Out\",\r\n            \"kilometres\": 1000\r\n        }"
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/cars/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/cars/14953a34-edca-46e7-97fa-b06c7f0b1261",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/cars/14953a34-edca-46e7-97fa-b06c7f0b1261",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						"14953a34-edca-46e7-97fa-b06c7f0b1261"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

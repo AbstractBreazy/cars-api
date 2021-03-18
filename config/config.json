@@ -1,0 +1,10 @@
+{
+  "DatabaseConfiguration": {
+    "engine": "postgres",
+    "server": "127.0.0.1",
+    "port": "8090",
+    "user": "cars_db_owner",
+    "password": "ojcafizp123",
+    "database": "cars_db"
+  }
+}
