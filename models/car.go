@@ -1,31 +1,11 @@
 package models
 
-/*
-Тестовое задание:
-
-Разработать CRUD (REST API) для модели автомобиля, который имеет следующие поля:
-
-
-
-1. Уникальный идентификатор (любой тип, общение с БД не является критерием чего-либо, можно сделать и in-memory хранилище на время жизни сервиса)
-
-2. Бренд автомобиля (текст)
-
-3. Модель автомобиля (текст)
-
-4. Цена автомобиля (целое, не может быть меньше 0)
-
-5. Статус автомобиля (В пути, На складе, Продан, Снят с продажи)
-
-6. Пробег (целое)
-
-*/
 type Car struct {
-	ID         string `json:"id"` // unique / primary key gorm
+	ID         string `json:"id" gorm:"primary_key"`
 	Brand      string `json:"brand"`
 	Model      string `json:"model"`
 	Price      int64  `json:"price"`
-	Status     string `json:"status"` // 1 - В пути, 2 - На Складе, 3 - Продано, 4 - Нет в наличии
+	Status     string `json:"status"` // 1 - Away, 2 - In Stock, 3 - Sold Out, 4 - No longer available
 	Kilometres int64  `json:"kilometres"`
 }
 
