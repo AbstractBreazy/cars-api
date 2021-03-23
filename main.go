@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
-	"github.com/go-chi/render"
 	"github.com/sirupsen/logrus"
 	"log"
 	"net/http"
@@ -48,8 +47,6 @@ func main() {
 	connection.DB.LogMode(true)
 	env.CarsManager = managers.InitCarsManager(connection)
 
-	// Connect to managers env blah-blah
-
 	// Create a router without any middleware
 	r := chi.NewRouter()
 
@@ -71,19 +68,16 @@ func main() {
 	// if there was one
 	r.Use(middleware.Recoverer)
 
-	// SetContentType is a middleware that forces response Content-Type
-	r.Use(render.SetContentType(render.ContentTypeJSON))
-
 	// Routes stack
 	r.Route("/api/v1/cars", func(r chi.Router) {
 		r.Post("/", env.CreateCar)
 		r.Get("/", env.GetCars)
-		r.Put("/", env.UpdateCar)
+		r.Put("/{id}", env.UpdateCar)
 		r.Delete("/{id}", env.DeleteCar)
 		r.Get("/{id}", env.GetCar)
 	})
 
-	// Start Listening :5432
+	// Start Listening :8090
 	fmt.Println("Start listening http at port 8090...")
 	err = http.ListenAndServe(":8090", r)
 	if err != nil {

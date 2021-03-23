@@ -1,5 +1,10 @@
 package models
 
+import (
+	"cars-api/config"
+	"errors"
+)
+
 type Car struct {
 	ID         string `json:"id" gorm:"primary_key"`
 	Brand      string `json:"brand"`
@@ -54,4 +59,38 @@ func (b *CarsDataStore) GetAll() (*[]Car, error) {
 		return nil, err
 	}
 	return cars, nil
+}
+
+func (b *CarsDataStore) Validate(obj *Car) (err error) {
+	if len(obj.Model) < 1 {
+		return errors.New("incorrect model value")
+	}
+	if len(obj.Brand) < 1 {
+		return errors.New("incorrect brand value")
+	}
+	if StatusCheck(obj.Status) == false {
+		return errors.New("incorrect status value")
+	}
+	if obj.Price < 0 {
+		return errors.New("incorrect price value")
+	}
+	if obj.Kilometres < 0 {
+		return errors.New("incorrect kilometres value")
+	}
+	return nil
+}
+
+func StatusCheck(str string) bool {
+	var statusMap = map[string]bool{
+		config.AWAY_STATUS:                true,
+		config.IN_STOCK_STATUS:            true,
+		config.NO_LONGER_AVAILABLE_STATUS: true,
+		config.SOLD_OUT_STATUS:            true,
+	}
+
+	if _, ok := statusMap[str]; !ok {
+		return false
+	} else {
+		return true
+	}
 }

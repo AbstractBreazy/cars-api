@@ -6,6 +6,13 @@ import (
 	"os"
 )
 
+const (
+	AWAY_STATUS                = "Away"
+	IN_STOCK_STATUS            = "In Stock"
+	SOLD_OUT_STATUS            = "Sold Out"
+	NO_LONGER_AVAILABLE_STATUS = "No Longer Available"
+)
+
 // DatabaseConfigurations exported
 type DBConfig struct {
 	Engine   string
