@@ -1,7 +1,6 @@
 package main
 
 import (
-	"cars-api/config"
 	"cars-api/models"
 	"cars-api/response"
 	"encoding/json"
@@ -139,18 +138,4 @@ func (env *Env) GetCar(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Write(context)
 	return
-}
-
-func statusCheck(str string) bool {
-	var statusMap = map[string]bool{
-		config.AWAY_STATUS:                true,
-		config.IN_STOCK_STATUS:            true,
-		config.NO_LONGER_AVAILABLE_STATUS: true,
-		config.SOLD_OUT_STATUS:            true,
-	}
-	if _, ok := statusMap[str]; !ok {
-		return false
-	} else {
-		return true
-	}
 }
